@@ -1,0 +1,15 @@
+good morning sir i am shubham kumar with my team sud....sidd...utt.... to introduce our project meeting summary generator...
+
+A meeting summary generator is a tool that automates the process of creating a summary of a meeting. it analyzes the meeting 
+transcript or recording and identifies the key points, decisions, action items, and any other relevant information discussed during 
+the meeting. It then generates a concise and organized summary that can be used to share the meeting outcomes with attendees or 
+stakeholders who were not present at the meeting. The summary generator saves time and ensures that all important details are 
+captured accurately, helping to facilitate effective communication and decision-making.
+
+In many organizations, there are often lengthy and unproductive meetings that waste time and lead to confusion. Participants may 
+have trouble recalling important details or action items from the meeting, which can cause delays in progress and decrease 
+productivity. A summary meeting generator aims to solve this problem by automatically generating concise and accurate summaries 
+of meetings that capture the main points and action items discussed. This tool would enable participants to quickly review the 
+meeting highlights and take appropriate actions, leading to more efficient and effective decision-making processes. The challenge in 
+developing such a tool lies in accurately capturing the essence of the meeting and distilling it into a coherent summary that is both 
+informative and actionable.
