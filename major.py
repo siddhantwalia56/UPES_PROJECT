@@ -54,8 +54,8 @@ def get_summary(str_input):
     tokenized_text = tokenizer.encode(t5_prepared_text, return_tensors="pt").to(device)
 
     summary = ""
-    for i in range(0,len(tokenized_text),512):
-        text_inp = tokenized_text[i:i+512]
+    for i in range(0,len(tokenized_text),1024):
+        text_inp = tokenized_text[i:i+1024]
         summary_ids = model.generate(text_inp,
                                         num_beams=4,
                                         no_repeat_ngram_size=3,

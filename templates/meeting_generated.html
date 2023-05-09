@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> M.S.G </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- navebar -->
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+
+    <!-- Success -->
+    <div class="container mt-5">
+        <div class="card card-body shadow-effect-2">
+            <p>Topic : {{ info.topic }}</p>
+            <p>Meeting Start At : {{ info.start_time }}</p>
+            <p>Duration of Meeting : {{ info.duration }}</p>
+            <p>About Meeting : {{ info.agenda }}</p>
+
+            <p>Host Joing Link : </p>
+            <div class="input-group mb-3">
+                <input class="form-control" type="text" id="hostLink" value="{{ info.start_url }}" disabled>
+            </div>
+
+            <p>Share Link :</p>
+            <div class="input-group mb-3">
+                <input class="form-control" type="text" id="link" value="{{ info.join_url }}"
+                    aria-describedby="copyLink" disabled>
+            </div>
+
+            <p>Meeting Passwords :</p>
+            <ul class="m-0">
+                <li>
+                    <p>Password : {{ info.password }}</p>
+                </li>
+                <li>
+                    <p>Phone Password : {{ info.pstn_password }}</p>
+                </li>
+                <li>
+                    <p>Encrypted Meeting Password : {{ info.encrypted_password }}</p>
+                </li>
+            </ul>
+            <div class="row justify-content-sm-evenly">
+                <div class="col-3 mt-3">
+                    <div class="card card-body shadow-effect text-center">
+                        <a href="{{ info.start_url }}" target="blank">Join as a Host</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+</html>
