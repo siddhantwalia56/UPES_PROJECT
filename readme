@@ -1,0 +1,19 @@
+1.  Install the requirements.txt file for the dependencies:
+    pip install -r requirements.txt
+
+2.  After Installing run the app.py file in python:
+    python app.py
+
+
+Folders:
+    static
+        audio - summary audio
+        summary - store summary that generated
+        uploads - save the txt file that user uploads
+    
+    Templates - contain html structure of the webapp
+
+    app.py - main file that connects all the pages 
+    create_meeting - create zoom meeting
+    mail - send mail
+    major - generate the summary in pdf and audio form

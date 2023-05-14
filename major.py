@@ -1,23 +1,13 @@
 import pypyodbc as odbc
-from translate import Translator
-from gtts import gTTS
-import os
 import torch
 import json
+import requests, http
+import os
 from translate import Translator
+from gtts import gTTS
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 from fpdf import FPDF
-import requests, http
-import smtplib
-import os
 from datetime import datetime
-
-from email import encoders
-from email.mime.base import MIMEBase
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.application import MIMEApplication
-from mail import send_mail
 
 language_sel = {"English" : "en", 
                 "Portuguese": "pt", 

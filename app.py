@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template, request
 from datetime import datetime
 from major import index
-from create_meeting import createMeating
+from create_meeting import meeting
 
 app = Flask(__name__)
 
@@ -52,7 +52,7 @@ def meetingDetails():
                 "mute_upon_entry": request.form.get('mute_upon_entry', False)
             }
         }
-        info = createMeating(details)
+        info = meeting(details)
         data = json.loads(info)
         return render_template('meeting_generated.html', info=data)
     return render_template('home.html')

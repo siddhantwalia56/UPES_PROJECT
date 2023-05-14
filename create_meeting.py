@@ -34,10 +34,20 @@ def createMeeting(userId, meetingdetails):
                'content-type': 'application/json'}
     r = requests.post(
         f'https://api.zoom.us/v2/users/{userId}/meetings', headers=headers, data=json.dumps(meetingdetails))
+
+    meeting_info = r.json()
+    print(meeting_info)
+    # recording_id = meeting_info['recording']['id']
+    # response = requests.get(f'https://api.zoom.us/v2/meetings/{meeting_info["id"]}/recordings/{recording_id}/download', headers=headers)
+    # if response.status_code == 200:
+    #     # save the recording to a specific location
+    #     with open('static/zoomAudio/'+recording_id+".mp4" , 'wb') as f:
+    #         f.write(response.content)
+
     return (r.text)
 
 
-def createMeating(details):
+def meeting(details):
     meetingdetails = {"topic": details['topic'],
                       "type": 2,
                       "start_time": details['start_time'],
@@ -53,8 +63,9 @@ def createMeating(details):
                                    "join_before_host": details['settings']['join_before_host'],
                                    "mute_upon_entry": details['settings']['mute_upon_entry'],
                                    "watermark": "true",
-                                   "audio": "voip",
-                                   "auto_recording": "local"
+                                   "auto_recording": "local",
+                                   'recording_type': 'audio_transcript',
+                                   'audio_transcript_lang': 'en-US'
                                    }
                       }
     userId = getUsers()
